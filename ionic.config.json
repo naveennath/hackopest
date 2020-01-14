@@ -1,5 +1,7 @@
 {
   "name": "rai",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

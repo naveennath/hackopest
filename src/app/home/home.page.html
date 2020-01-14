@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar style="--ion-background-color:rgb(0, 0, 0)">
+    <ion-title color="primary">
+     Home
+    </ion-title>
+     <ion-icon slot="end" name="notifications"  color="primary "size="medium" (click)="navigate('notify')" *ngIf="can" padding></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card">
+      <img src="/assets/train.jpeg" alt="" />
+      <ion-item>
+      <ion-card-header>
+      <ion-grid >
+      <div class="container">
+      <ion-row class="ion-justify-content-between">
+      <ion-col size-md="6">
+      
+  <ion-input type="text">FROM</ion-input>
+  
+  <ion-input type="text" color="danger" disabled [(ngModel)]="fro1"></ion-input>
+  
+
+
+
+        </ion-col>
+         <ion-col size-md="3">
+<br>
+ </ion-col>
+        <ion-col size-md="4">
+        <ion-icon name="repeat" id="swap"  color="primary "size="large" (click)="swapValues()" padding></ion-icon>
+  
+        </ion-col>
+ <ion-col size-md="3">
+<br>
+ </ion-col>
+        <ion-col size-md="6">
+       
+     <ion-input type="text">TO</ion-input>
+        
+     <ion-input type="text" color="danger" disabled [(ngModel)]="t2"></ion-input>
+  
+
+      
+        </ion-col>
+        </ion-row>
+        </div>
+       </ion-grid>
+
+    <ion-item class="container">
+    <ion-icon name="calendar"  color="primary "size="medium" padding (click)="cal()" ></ion-icon>
+      <ion-datetime [(ngModel)]="myDate"></ion-datetime>
+    </ion-item>
+      </ion-card-header>
+      </ion-item>
+      <ion-footer>
+      <div style="text-align: center">
+     <ion-button shape="round" fill="outline" expand="full" (click)="navigate('trains')" >SEARCH</ion-button>
+ </div>
+ </ion-footer>
+    </ion-card>
+    <ion-fab vertical="bottom" horizontal="end">
+  <ion-fab-button><ion-icon name="arrow-dropup-circle"></ion-icon> </ion-fab-button>
+
+  <ion-fab-list side="top" color="danger">
+    <ion-fab-button (click)="navigate('login')" *ngIf="canadd">Login</ion-fab-button>
+    <ion-fab-button (click)="navigate('login')" *ngIf="canadd">REG</ion-fab-button>
+    
+    <ion-fab-button *ngIf="can" (click)="logout()">LOG</ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+    <ion-content>
+
+ 

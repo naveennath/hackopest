@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>
+      MyTrains
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-segment [(ngModel)]="firstpage" color="secondary">
+    <ion-segment-button value="login">
+      Login
+    </ion-segment-button>
+    <ion-segment-button value="register">
+      Register
+    </ion-segment-button>
+  </ion-segment>
+  <div [ngSwitch]="firstpage">
+    <ion-list *ngSwitchCase="'login'">
+          <ion-item>
+        <ion-input type="e-mail" name="e-mail" placeholder="e-mail"  [(ngModel)]="Userinfo.EEmail"[(ngModel)]="Email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="password" name="pwd1" placeholder="password" [(ngModel)]="password"></ion-input>
+          </ion-item>
+          <ion-button fill="solid" size="default" color="secondary" shape="round" (click)="trylogin()">Login</ion-button>
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'register'">
+      <ion-item>
+        <ion-input type="text" name="name1" placeholder="name" [(ngModel)]="Userinfo.name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="e-mail" name="e-mail" placeholder="e-mail" [(ngModel)]="Userinfo.EEmail"[(ngModel)]="Email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="tel" maxlength="11" minlength="10" placeholder="phone number" [(ngModel)]="Userinfo.phone"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" name="uname" placeholder="username" [(ngModel)]="Userinfo.username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input type="password" name="pwd" placeholder="password" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      <ion-button fill="solid" size="default" color="secondary" shape="round" (click)="regist()">Register</ion-button>
+        </ion-list>
+  </div>
+</ion-content>
